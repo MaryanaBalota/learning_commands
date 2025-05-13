@@ -13,7 +13,7 @@ async def main():
         await expect(page.locator("#dynamicClickMessage")).to_have_text("You have done a dynamic click")
         button = page.locator(("text = Click Me")).nth(0)
         await button.dblclick()
-        await page.screenshot(path = 'screenshots/doubleClick.png')
+        await page.screenshot(path = 'screenshots/double.png')
         await expect(page.locator("#doubleClickMessage")).to_have_text("You have done a double click")
         await context.tracing.stop(path = "logs/trace.zip")
         await browser.close()
